@@ -2,7 +2,6 @@ const HtmlWebPackPlugin = require('html-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const webpack = require('webpack');
 const path = require('path');
-const nodeExternals = require('webpack-node-externals');
 
 module.exports = {
    entry: './src/index.js',
@@ -40,17 +39,7 @@ module.exports = {
          }
       ]
    },
-   devServer: {
-      static: {
-         directory: path.join(__dirname, 'dist'),
-      },
-      compress: true,
-      port: 9000,
-   },
    plugins: [
-      new webpack.ProvidePlugin({
-         "React": "react",
-      }),
       new HtmlWebPackPlugin({
          title: "Form Post",
          template: './public/index.html',
