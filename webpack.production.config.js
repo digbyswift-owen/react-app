@@ -1,6 +1,7 @@
 const HtmlWebPackPlugin = require( 'html-webpack-plugin' );
 const TerserPlugin = require('terser-webpack-plugin');
 const path = require( 'path' );
+const { NONAME } = require('dns');
 
 module.exports = {
    entry: './src/index.js',
@@ -18,12 +19,12 @@ module.exports = {
             use: 'babel-loader',
          },
          {
-            test: /\.scss$/,
-            use: ['style-loader', 'css-loader'],
-         },
-         {
-            test: /\.(png|j?g|svg|gif)?$/,
-            use: 'file-loader'
+            test: /\.s[ac]ss$/i,
+            use: [
+              "style-loader",
+              "css-loader",
+              "sass-loader",
+            ],
          }
 ]
    },
@@ -42,10 +43,11 @@ module.exports = {
       })
    ],
    optimization: {
-    minimizer: [
+      minimize: true,
+      minimizer: [
         new TerserPlugin({
-            test: /\.js(\?.*)?$/i,
+          parallel: true,
         }),
-    ]
-}
+      ],
+   },
 };

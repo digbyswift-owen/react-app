@@ -1,6 +1,6 @@
-import * as React from 'react';
+import React from 'react';
 import { useState } from 'react';
-window.React = React
+
 
 function Form(props) {
     const [name, setName] = useState('');

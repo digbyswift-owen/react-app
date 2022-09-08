@@ -1,5 +1,4 @@
-import * as React from 'react';
-window.React = React
+import React from 'react';
 
 function HideButton(props){
 

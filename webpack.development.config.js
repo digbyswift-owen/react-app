@@ -11,6 +11,7 @@ module.exports = {
       publicPath: './'
    },
    mode: 'development',
+   devtool: 'source-map',
    module: {
       rules: [
          {
@@ -55,5 +56,5 @@ module.exports = {
             test: /\.js(\?.*)?$/i,
         }),
     ]
-}
+   },
 };

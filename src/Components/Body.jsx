@@ -1,8 +1,7 @@
-import * as React from 'react';
+import React from 'react';
 import { useState } from 'react';
 import Form from ".//Form.jsx";
 import HideButton from ".//HideButton.jsx";
-window.React = React
 
 function Body(props) {
     const [hideForm, setHideForm] = useState(false);

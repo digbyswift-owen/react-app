@@ -1,8 +1,8 @@
-import * as React from 'react';
+import React from 'react';
 import './App.scss';
 import Body from './/Components/Body.jsx';
 import {useState} from 'react';
-window.React = React
+
 
 function App() {
   const [name, setName] = useState('');
