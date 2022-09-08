@@ -1,7 +1,7 @@
 const HtmlWebPackPlugin = require( 'html-webpack-plugin' );
 const TerserPlugin = require('terser-webpack-plugin');
 const path = require( 'path' );
-const { NONAME } = require('dns');
+const nodeExternals = require('webpack-node-externals');
 
 module.exports = {
    entry: './src/index.js',
@@ -11,6 +11,11 @@ module.exports = {
       publicPath: './'
    },
    mode: 'development',
+   target: 'node',
+   externals: [nodeExternals()], 
+   externalsPresets: {
+      node: true
+  },
    module: {
       rules: [
          {

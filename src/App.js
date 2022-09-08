@@ -8,7 +8,7 @@ function App() {
   const [name, setName] = useState('');
   return (
     <div className="App">
-      <h1>Submit Your Name:</h1>
+      <h1>Submit Your First Name:</h1>
         <Body name={name} setName={setName}/>
     </div>
   );
