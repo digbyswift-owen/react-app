@@ -11,10 +11,7 @@ module.exports = {
       filename: 'main.js',
       publicPath: './'
    },
-   externals: [nodeExternals()], 
-   externalsPresets: {
-      node: true
-  },
+   target: 'web',
    mode: 'development',
    devtool: 'source-map',
    module: {

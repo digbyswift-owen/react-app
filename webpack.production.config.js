@@ -11,8 +11,7 @@ module.exports = {
       publicPath: './'
    },
    mode: 'development',
-   target: 'node',
-   externals: [nodeExternals()], 
+   target: 'web',
    externalsPresets: {
       node: true
   },
